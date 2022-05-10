@@ -1,0 +1,29 @@
+<div class="card" style="border-color: blue; margin-top: 20px">
+  <div class="card-body col-lg-12">
+    <div class="row">
+      <div class="col-lg-5">
+        <img [src]="product.image" style="height: 80%; width: 80%" />
+      </div>
+      <div class="col-lg-7">
+        <div style="margin-top: 30px">
+          {{ product.title | uppercase }}
+          <i
+            class="m-2"
+            [ngClass]="getClass()"
+            (click)="showProductDetailsToggle()"
+          ></i>
+        </div>
+        <div [hidden]="ProductDetail">
+          <p>PRICE: {{ product.price | currency: "INR" }}</p>
+          <p>DESCRIPTION: {{ product.description }}</p>
+          <p>CATEGORY: {{ product.category }}</p>
+          <div>
+            <app-counter></app-counter>
+          </div>
+        </div>
+        <!-- <button class="btn btn-info m-1">Edit</button>
+                <button class="btn btn-info m-1">Delete</button> -->
+      </div>
+    </div>
+  </div>
+</div>

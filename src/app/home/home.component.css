@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.bgimg{
+    background-image: url(https://wallpapercave.com/wp/wp3106251.jpg);
+    width: 100%;
+    height: 689px;
+    background-size: auto;
+
+    background-repeat: no-repeat;
+}
+    
+.bgimg h1{
+    padding-top: 200px;
+    
+    font-size: 75px;
+    padding-left: 30px;
+    color: white;
+}
+
+.bgimg .homeimgcont{
+    font-size: 75px;
+    
+}
+
+.secondsec{
+    padding: 100px;
+}
+
+/* .thirdsec .thirdsecbgimage{
+    background-image: url(https://images2.minutemediacdn.com/image/upload/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/643188-gettyimages-153946385-ca1ccfaad9be44325afc434b305adc0d.jpg);
+    width: 100px;
+    height: 100px;
+} */
+
+.bgimgsixthsec{
+background-image: url(https://technext.github.io/vegefoods/images/bg_3.jpg);
+width: 100%;
+height: 689px;
+background-size: auto;
+margin-top: 100px;
+
+background-repeat: no-repeat;
+}
+
+
+    

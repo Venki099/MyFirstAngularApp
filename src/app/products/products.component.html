@@ -1,0 +1,20 @@
+<div class="container-fluid" style="margin-top: 100px">
+  <div class="row">
+    <div class="col-lg-3">
+      <app-productsub
+        [product]="productItem"
+        *ngFor="let productItem of products"
+      ></app-productsub>
+    </div>
+    <div class="col-lg-6">
+      <app-product [product]="productItem" *ngFor="let productItem of products">
+      </app-product>
+    </div>
+    <div class="col-lg-3">
+      <app-productsub
+        [product]="productItem"
+        *ngFor="let productItem of products"
+      ></app-productsub>
+    </div>
+  </div>
+</div>
