@@ -16,6 +16,11 @@ import { CounterComponent } from './products/counter/counter.component';
 import { CounterchildComponent } from './products/counter/counterchild/counterchild.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
+//HttpClient for API
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 
 
@@ -35,13 +40,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CounterComponent,
     CounterchildComponent,
     LoginComponent,
+    UserRegistrationComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

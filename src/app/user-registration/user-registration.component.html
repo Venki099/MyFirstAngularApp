@@ -1,0 +1,111 @@
+<!--Registration Form-->
+<div class="container">
+  <!--Consuming Web API and displaying in the table (READ OPERATION -> GET)-->
+  <table class="table table-responsive">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Confirmpassword</th>
+        <th>Phonenumber</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of allUsers | async">
+        <td>{{ u.id }}</td>
+        <td>{{ u.FirstName }}</td>
+        <td>{{ u.LastName }}</td>
+        <td>{{ u.Email }}</td>
+        <td>{{ u.Password }}</td>
+        <td>{{ u.Confirmpassword }}</td>
+        <td>{{ u.Phonenumber }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <!--Creating a user using Web API (Create Operation -> POST)-->
+  <div
+    class="container"
+    style="
+      align-items: center;
+      width: 400px;
+      border: 1px solid black;
+      padding: 40px;
+      border-radius: 15px;
+      background-color: #20243d;
+      margin-bottom: 10px;
+      margin-top: 20px;
+      color: white;
+    "
+  >
+    <div class="row">
+      <div class="form_bg">
+        <!--accessing onSubmit() from user-registration.component.ts-->
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+          <h2 class="text-center">Registration page</h2>
+          <br />
+          <div class="form-group">
+            <label for="name">FirstName</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="FirstName"
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">LastName</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="LastName"
+            />
+          </div>
+          <div class="form-group">
+            <label for="Email">Email</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="sample@example.com"
+              formControlName="Email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="username">Password</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              formControlName="Password"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Confirmpassword</label>
+            <input
+              type="text"
+              class="form-control"
+              id="password"
+              formControlName="Confirmpassword"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Phonenumber</label>
+            <input
+              type="text"
+              class="form-control"
+              id="password"
+              formControlName="Phonenumber"
+            />
+          </div>
+          <br />
+          <div class="align-center">
+            <button type="submit" class="btn btn-primary" id="register">
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -29,11 +29,11 @@ export class ProductsComponent implements OnInit {
   products:Product[] = [
     {
       "id": 1,
-      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-      "price": 109.95,
-      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-      "category": "men's clothing",
-      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "title": "BROCOLLI",
+      "price": 120,
+      "description": "Broccoli is an edible green plant in the cabbage family whose large flowering head, stalk and small associated leaves are eaten as a vegetable. Broccoli is classified in the Italica cultivar group of the species Brassica oleracea.",
+      "category": "Vegetable",
+      "image": "https://technext.github.io/vegefoods/images/product-6.jpg",
       "rating": {
         "rate": 3.9,
         "count": 120
@@ -41,11 +41,11 @@ export class ProductsComponent implements OnInit {
     },
     {
       "id": 2,
-      "title": "Mens Casual Premium Slim Fit T-Shirts ",
-      "price": 22.3,
-      "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-      "category": "men's clothing",
-      "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      "title": "Apple ",
+      "price": 129,
+      "description": "An apple is an edible fruit produced by an apple tree. Apple trees are cultivated worldwide and are the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor, Malus sieversii,",
+      "category": "Fruit",
+      "image": "https://technext.github.io/vegefoods/images/product-10.jpg",
       "rating": {
         "rate": 4.1,
         "count": 259
