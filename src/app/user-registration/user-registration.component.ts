@@ -9,7 +9,8 @@ import { User } from '../user';
 //import user-service.service.ts
 import { UserserviceService } from '../userservice.service';
 //import for Form designing in Angular
-import { FormGroup,FormControl } from '@angular/forms';
+import { FormGroup,FormControl,FormBuilder } from '@angular/forms';
+import {Router} from '@angular/router'
 @Component({
   selector: 'app-user-registration',
   templateUrl: './user-registration.component.html',
@@ -22,11 +23,14 @@ export class UserRegistrationComponent implements OnInit
   allUsers! :Observable<User[]>; 
   userForm! :FormGroup;
   dataSaved = false;
+  
  
-  userIdUpdate = null;
+  userIdUpdate : any;
   massage = 'ABC';//
+  updateEmployeeId = null;
+  employeeForm:any
   //inheriting UserServiceService from user-service.service.ts
-  constructor(private userservice:UserserviceService)
+  constructor(private userservice:UserserviceService,private router: Router)
   {
     
   }
@@ -57,7 +61,7 @@ export class UserRegistrationComponent implements OnInit
       );
     } else {
       user.id = this.userIdUpdate;
-      this.userservice.updateEmployee(user).subscribe(() => {
+      this.userservice.updateUser(user).subscribe(() => {
         this.dataSaved = true;
         this.massage = 'Record Updated Successfully';
         this.loadAllUsers();
@@ -67,6 +71,7 @@ export class UserRegistrationComponent implements OnInit
     }
   }
   ngOnInit(): void {
+    
     this.loadAllUsers();
     console.log(this.allUsers)
     this.userForm=new FormGroup({
@@ -77,9 +82,40 @@ export class UserRegistrationComponent implements OnInit
       'Confirmpassword':new FormControl(null),
       'Phonenumber':new FormControl(null)
     })
+    
   }
+
+  
   loadAllUsers()
   {
     this.allUsers=this.userservice.getAllUsers();
+  }
+
+  loadEmployeetoEdit(userid: number){
+    this.userservice.getEmployeeById(userid).subscribe( user => {
+      //this.massage = 'xyz';
+      //this.dataSaved = false;
+      this.userIdUpdate = user.id;
+      this.userForm.controls['FirstName'].setValue(user.FirstName)
+      this.userForm.controls['LastName'].setValue(user.LastName)
+      this.userForm.controls['Email'].setValue(user.Email)
+      this.userForm.controls['Password'].setValue(user.Password)
+      this.userForm.controls['Confirmpassword'].setValue(user.Confirmpassword)
+      this.userForm.controls['Phonenumber'].setValue(user.Phonenumber)
+    });
+
+  }
+
+  deleteEmployee(userId: number){
+    if (confirm("Are you sure you want to delete this ?")) {  
+      this.userservice.deleteEmployeeById(userId).subscribe(() => {
+        //this.dataSaved = true;
+       // this.message = 'Record Deleted Succefully';
+        this.loadAllUsers();
+        this.userIdUpdate = null;
+        this.userForm.reset();
+  
+      });
+    }
   }
 }
