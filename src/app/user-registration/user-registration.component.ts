@@ -91,8 +91,8 @@ export class UserRegistrationComponent implements OnInit
     this.allUsers=this.userservice.getAllUsers();
   }
 
-  loadEmployeetoEdit(userid: number){
-    this.userservice.getEmployeeById(userid).subscribe( user => {
+  loadUserToEdit(Id: number){
+    this.userservice.getEmployeeById(Id).subscribe( user => {
       //this.massage = 'xyz';
       //this.dataSaved = false;
       this.userIdUpdate = user.id;
@@ -117,5 +117,9 @@ export class UserRegistrationComponent implements OnInit
   
       });
     }
+  }
+
+  resetForm(){
+    this.userForm.reset();
   }
 }

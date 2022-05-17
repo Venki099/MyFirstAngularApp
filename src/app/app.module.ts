@@ -20,6 +20,8 @@ import { UserRegistrationComponent } from './user-registration/user-registration
 //HttpClient for API
 import { HttpClientModule } from '@angular/common/http';
 
+import { CustomerComponent } from './customer/customer.component';
+
 
 
 
@@ -41,6 +43,8 @@ import { HttpClientModule } from '@angular/common/http';
     CounterchildComponent,
     LoginComponent,
     UserRegistrationComponent,
+    
+    CustomerComponent,
     
   ],
   imports: [

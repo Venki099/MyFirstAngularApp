@@ -18,7 +18,7 @@ export class UserserviceService {
     return this.http.get<User[]>(this.url );
   }
   getEmployeeById(id: number): Observable<User> {  
-    return this.http.get<User>(this.url + '/GetEmployeeDetailsById/' + id);  
+    return this.http.get<User>(this.url + '/GetEmployeeDetailsById?=' + id);  
   } 
   // Will invoke UserRegistrationsController->PostUserRegistration
   createUser(user: User): Observable<User> {  
@@ -28,9 +28,9 @@ export class UserserviceService {
   }  
   updateUser(user: User): Observable<User> {  
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'}) };  
-    return this.http.put<User>(this.url + '/'+user.id,  
+    return this.http.put<User>(this.url + '/'+ user.id, 
     user, httpOptions);  
-  }  
+  }    
   deleteEmployeeById(id: number): Observable<number> {  
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'}) };  
     return this.http.delete<number>(this.url + '/DeleteEmployeeDetails?id=' +id,  
